@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  workspace:
+    build:
+      context: ./workspace
+      args:
+        - GO_VERSION=${GO_VERSION}
+    volumes:
+      - ./:${APP_CODE_PATH_CONTAINER}${APP_CODE_CONTAINER_FLAG}
+    tty: true
